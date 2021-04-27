@@ -46,7 +46,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'citest.App'
+    mainClass = 'com.game.SpringGameBootApplication'
 }
 
 tasks.named('test') {
