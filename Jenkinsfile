@@ -19,7 +19,7 @@ node {
 
     stage('Build Docker Image') {
       // build docker image
-      dockerImage = docker.build("devopsexample:${env.BUILD_NUMBER}")
+      dockerImage = docker.build("devopsexample")
     }
 
     stage('Deploy Docker Image'){
@@ -32,12 +32,12 @@ node {
 
 	  sh "docker rm devopsexample"
 
-	  sh "docker run --name devopsexample -d -p 8888:8888 devopsexample:${env.BUILD_NUMBER}"
+	  sh "docker run --name devopsexample -d -p 8888:8888 devopsexample"
 
 	  // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
       //    dockerImage.push("${env.BUILD_NUMBER}")
       //      dockerImage.push("latest")
       //  }
-
+// :${env.BUILD_NUMBER}
     }
 }
